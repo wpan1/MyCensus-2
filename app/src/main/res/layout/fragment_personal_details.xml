@@ -1,0 +1,241 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.codebrew.mycensus.Tabs.PersonalDetailsTab">
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.codebrew.mycensus.Tabs.PersonalDetailsTab">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="122dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="122dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Personal"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintStart_toEndOf="@+id/guideline_start" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/infoCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/colorCard"
+        app:layout_constraintStart_toEndOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/textView">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Information\n"
+                android:textColor="@color/colorCardText"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check that the interviewee's personal details are accurate\n"
+                android:textColor="@color/colorCardText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="These details should match what is recorded on the person's passport and/or birth certificate."
+                android:textColor="@color/colorCardText" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/infoCard">
+        <EditText
+            android:id="@+id/first_name_et"
+            android:layout_width="200dp"
+            android:textSize="14dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:hint="First Name" />
+        <EditText
+            android:id="@+id/last_name_et"
+            android:layout_width="200dp"
+            android:textSize="14dp"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            android:backgroundTint="@color/colorPrimary"
+            android:paddingLeft="20dp"
+            app:layout_constraintStart_toEndOf="@+id/first_name_et"/>
+
+        <EditText
+            android:id="@+id/region"
+            android:layout_width="200dp"
+            android:textSize="14dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:hint="Region"
+            app:layout_constraintTop_toBottomOf="@+id/first_name_et"/>
+
+        <EditText
+            android:id="@+id/marital"
+            android:layout_width="200dp"
+            android:textSize="14dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:hint="Marital Status"
+            app:layout_constraintTop_toBottomOf="@+id/region"/>
+        <RadioGroup
+            android:id="@+id/gender"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/marital">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:text="Gender"/>
+
+            <RadioButton
+                android:id="@+id/Male"
+                android:layout_width="100dp"
+                android:textSize="14sp"
+                android:buttonTint="@color/colorPrimary"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:text="M"/>
+
+
+            <RadioButton
+                android:id="@+id/Female"
+                android:layout_width="100dp"
+                android:textSize="14sp"
+                android:buttonTint="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:text="F"/>
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/dob"
+            android:layout_width="400dp"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:hint="Date of Birth"
+            android:backgroundTint="@color/colorPrimary"
+            android:clickable="true"
+            android:focusable="false"
+            app:layout_constraintTop_toBottomOf="@id/gender"/>
+
+        <LinearLayout
+            android:id="@+id/citizenshipcountry_lo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/dob">
+
+            <EditText
+                android:id="@+id/citizenship"
+                android:layout_width="200dp"
+                android:textSize="14dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:hint="Citizenship Country" />
+
+            <EditText
+                android:id="@+id/country"
+                android:layout_width="200dp"
+                android:textSize="14dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:hint="Country of Birth"
+                android:paddingLeft="20dp" />
+
+        </LinearLayout>
+        <EditText
+            android:id="@+id/mother_language"
+            android:layout_width="200dp"
+            android:textSize="14dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:hint="Mother Language"
+            app:layout_constraintTop_toBottomOf="@+id/citizenshipcountry_lo"/>
+
+        <EditText
+            android:id="@+id/phone_no"
+            android:layout_width="200dp"
+            android:textSize="14dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            app:layout_constraintTop_toBottomOf="@+id/mother_language"/>
+
+        <EditText
+            android:id="@+id/ed_qualification"
+            android:layout_width="200dp"
+            android:textSize="14dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:hint="Education Level"
+            app:layout_constraintTop_toBottomOf="@+id/phone_no"/>
+
+        <LinearLayout
+            android:id="@+id/disability_assistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/ed_qualification">
+            <EditText
+                android:id="@+id/disability"
+                android:layout_width="200dp"
+                android:textSize="14dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:hint="Disability"/>
+            <EditText
+                android:id="@+id/assistance"
+                android:layout_width="200dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textSize="14dp"
+                android:layout_height="wrap_content"
+                android:hint="Assistance"
+                android:paddingLeft="20dp" />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>
+
+</ScrollView>

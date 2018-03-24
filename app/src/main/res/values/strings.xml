@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyCensus</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="personal_details_title">Personal Details</string>
+    <string name="family_details_title">Family Details</string>
+    <string name="employment_details_title">Employment Details</string>
+    <string name="medical_details_title">Medical Details</string>
+</resources>
